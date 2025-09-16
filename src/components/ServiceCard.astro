@@ -1,0 +1,29 @@
+---
+// src/components/ServiceCard.astro
+interface Props {
+  title: string;
+  icon: string; // Por ejemplo: 🏗️
+}
+const { title, icon } = Astro.props;
+---
+
+<div class="service-card">
+  <div class="icon">{icon}</div>
+  <h3>{title}</h3>
+  <p>
+    <slot />
+  </p>
+</div>
+
+<style>
+  .service-card {
+    border: 1px solid var(--color-bordes);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  .icon {
+    font-size: 3rem;
+  }
+</style>

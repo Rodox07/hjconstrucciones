@@ -1,0 +1,19 @@
+---
+// src/pages/proyectos.astro
+import Layout from '../layouts/Layout.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+<Layout title="Nuestros Proyectos - H&J Construcciones">
+  <main class="container">
+    <h1 class="section-title">Nuestro Portafolio de Proyectos</h1>
+    <div class="grid grid-3-cols">
+       <!-- Reemplaza las imágenes con las tuyas en la carpeta /public/images/ -->
+      <ProjectCard title="Residencia Los Robles" category="Residencial" imgSrc="/images/proyecto1.jpg" />
+      <ProjectCard title="Edificio Corporativo Central" category="Comercial" imgSrc="/images/proyecto2.jpg" />
+      <ProjectCard title="Remodelación Integral Cocina" category="Remodelación" imgSrc="/images/proyecto3.jpg" />
+      <ProjectCard title="Complejo de Apartamentos" category="Residencial" imgSrc="/images/proyecto4.jpg" />
+      <ProjectCard title="Plaza Comercial del Sol" category="Comercial" imgSrc="/images/proyecto5.jpg" />
+      <ProjectCard title="Renovación de Fachada" category="Remodelación" imgSrc="/images/proyecto6.jpg" />
+    </div>
+  </main>
+</Layout>

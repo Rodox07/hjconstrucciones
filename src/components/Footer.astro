@@ -1,0 +1,35 @@
+---
+// src/components/Footer.astro
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="footer-container">
+    <p>&copy; {year} H&J Construcciones. Todos los derechos reservados.</p>
+    <div class="social-links">
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: var(--color-fondo-oscuro);
+    color: var(--color-texto-claro);
+    padding: 2rem 0;
+    margin-top: 4rem;
+  }
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .social-links a {
+    color: var(--color-texto-claro);
+    margin-left: 1rem;
+  }
+</style>

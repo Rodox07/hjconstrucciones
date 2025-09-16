@@ -1,0 +1,24 @@
+---
+// src/pages/servicios.astro
+import Layout from '../layouts/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+---
+<Layout title="Servicios - H&J Construcciones">
+  <main class="container">
+    <h1 class="section-title">Soluciones Integrales de Construcción</h1>
+    <div class="grid grid-2-cols">
+        <ServiceCard title="Construcción Residencial" icon="🏠">
+          Desde el diseño de planos hasta la entrega de llaves, gestionamos la construcción completa de viviendas unifamiliares y complejos residenciales.
+        </ServiceCard>
+        <ServiceCard title="Obras Comerciales" icon="🏢">
+          Construcción de edificios de oficinas, locales comerciales, bodegas industriales y más, enfocados en la funcionalidad y la optimización de espacios.
+        </ServiceCard>
+        <ServiceCard title="Remodelaciones y Ampliaciones" icon="🔨">
+          Transformamos espacios existentes para mejorar su estética, funcionalidad y valor. Realizamos remodelaciones de cocinas, baños, oficinas y ampliaciones.
+        </ServiceCard>
+        <ServiceCard title="Obras Civiles e Infraestructura" icon="🏗️">
+          Desarrollamos proyectos de infraestructura como pavimentación, redes de alcantarillado y movimientos de tierra con maquinaria pesada y personal calificado.
+        </ServiceCard>
+    </div>
+  </main>
+</Layout>

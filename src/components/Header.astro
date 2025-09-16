@@ -1,0 +1,52 @@
+---
+// src/components/Header.astro
+---
+<header class="site-header">
+  <div class="header-container">
+    <a href="/" class="logo">H&J Construcciones</a>
+    <nav class="main-nav">
+      <a href="/">Inicio</a>
+      <a href="/servicios">Servicios</a>
+      <a href="/proyectos">Proyectos</a>
+      <a href="/contacto" class="button">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--color-bordes);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+  }
+  .logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: var(--color-texto-oscuro);
+    text-decoration: none;
+  }
+  .main-nav a {
+    color: var(--color-texto-oscuro);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 500;
+  }
+  .main-nav a.button {
+    margin-left: 2rem;
+    color: white;
+  }
+  .main-nav a:not(.button):hover {
+    color: var(--color-primario);
+    text-decoration: none;
+  }
+</style>

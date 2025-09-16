@@ -1,0 +1,50 @@
+---
+// src/pages/index.astro
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+---
+
+<Layout title="H&J Construcciones - Inicio">
+  <Hero />
+
+  <main>
+    <section class="container">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <div class="grid grid-3-cols">
+        <ServiceCard title="Construcción Residencial" icon="🏠">
+          Diseñamos y construimos la casa de tus sueños, con los más altos estándares de calidad.
+        </ServiceCard>
+        <ServiceCard title="Obras Comerciales" icon="🏢">
+          Desarrollamos locales comerciales, oficinas y edificios corporativos funcionales y modernos.
+        </ServiceCard>
+        <ServiceCard title="Remodelaciones" icon="🔨">
+          Modernizamos y renovamos tus espacios para darles una nueva vida y mayor valor.
+        </ServiceCard>
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">Proyectos Destacados</h2>
+      <div class="grid grid-3-cols">
+        <!-- Reemplaza las imágenes con las tuyas en la carpeta /public/images/ -->
+        <ProjectCard 
+          title="Residencia Los Robles" 
+          category="Residencial" 
+          imgSrc="/images/proyecto1.jpg"
+        />
+        <ProjectCard 
+          title="Edificio Corporativo Central" 
+          category="Comercial" 
+          imgSrc="/images/proyecto2.jpg"
+        />
+        <ProjectCard 
+          title="Remodelación Integral Cocina" 
+          category="Remodelación" 
+          imgSrc="/images/proyecto3.jpg"
+        />
+      </div>
+    </section>
+  </main>
+</Layout>
