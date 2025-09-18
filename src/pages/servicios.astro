@@ -3,21 +3,24 @@
 import Layout from '../layouts/Layout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 ---
-<Layout title="Servicios - H&J Construcciones">
+<Layout title="Nuestros Servicios - H&J Construcciones">
   <main class="container">
-    <h1 class="section-title">Soluciones Integrales de Construcción</h1>
+    <h1 class="section-title">Nuestras Áreas de Especialización</h1>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">
+      Ofrecemos un abanico de soluciones en construcción e ingeniería, garantizando una gestión responsable y resultados de alta calidad en cada proyecto.
+    </p>
     <div class="grid grid-2-cols">
-        <ServiceCard title="Construcción Residencial" icon="🏠">
-          Desde el diseño de planos hasta la entrega de llaves, gestionamos la construcción completa de viviendas unifamiliares y complejos residenciales.
+        <ServiceCard title="Proyectos de Agua Potable y Alcantarillado" icon="💧">
+          Diseñamos y ejecutamos redes de agua potable y sistemas de alcantarillado para loteos, condominios y sectores rurales, gestionando todas las aprobaciones necesarias.
         </ServiceCard>
-        <ServiceCard title="Obras Comerciales" icon="🏢">
-          Construcción de edificios de oficinas, locales comerciales, bodegas industriales y más, enfocados en la funcionalidad y la optimización de espacios.
+        <ServiceCard title="Proyectos SERVIU" icon="🏘️">
+          Tenemos experiencia en la postulación y ejecución de proyectos de subsidios habitacionales del SERVIU, incluyendo construcción de viviendas nuevas, ampliaciones y mejoramientos.
         </ServiceCard>
-        <ServiceCard title="Remodelaciones y Ampliaciones" icon="🔨">
-          Transformamos espacios existentes para mejorar su estética, funcionalidad y valor. Realizamos remodelaciones de cocinas, baños, oficinas y ampliaciones.
+        <ServiceCard title="Diseño y Construcción de Alcantarillados Particulares" icon="🏠">
+          Nos especializamos en la creación de soluciones sanitarias individuales, encargándonos del diseño, construcción y la tramitación completa ante la SEREMI de Salud para su recepción final.
         </ServiceCard>
-        <ServiceCard title="Obras Civiles e Infraestructura" icon="🏗️">
-          Desarrollamos proyectos de infraestructura como pavimentación, redes de alcantarillado y movimientos de tierra con maquinaria pesada y personal calificado.
+        <ServiceCard title="Obras de Construcción en General" icon="🏗️">
+          Abarcamos una amplia gama de obras civiles, desde la construcción de edificaciones comerciales y residenciales hasta infraestructura menor, siempre con un compromiso total con la calidad.
         </ServiceCard>
     </div>
   </main>

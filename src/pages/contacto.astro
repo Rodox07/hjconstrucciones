@@ -4,79 +4,67 @@ import Layout from '../layouts/Layout.astro';
 ---
 <Layout title="Contacto - H&J Construcciones">
   <main class="container">
-    <h1 class="section-title">Ponte en Contacto con Nosotros</h1>
+    <h1 class="section-title">Cotiza tu Proyecto con Nosotros</h1>
     <div class="contact-wrapper">
       <div class="contact-info">
-        <h3>Información de Contacto</h3>
-        <p>¿Listo para iniciar tu próximo proyecto? Contáctanos.</p>
+        <h3>Iniciemos tu Proyecto</h3>
+        <p>
+          Te invitamos a cotizar con nosotros. Analizaremos tus necesidades
+          y te guiaremos de manera efectiva y profesional en cada etapa.
+        </p>
         <ul>
           <li><strong>Email:</strong> contacto@hjconstrucciones.com</li>
           <li><strong>Teléfono:</strong> +1 (234) 567-890</li>
           <li><strong>Dirección:</strong> Av. Principal 123, Ciudad, País</li>
         </ul>
       </div>
-
-      <!-- 👇 ****** CAMBIOS IMPORTANTES AQUÍ ****** 👇 -->
-      <form 
-        action="https://formspree.io/f/xyzdavwe" 
-        method="POST" 
-        class="contact-form"
-      >
-        <h3>Envíanos un Mensaje</h3>
+      <form class="contact-form" action="https://formspree.io/f/TU_ID_UNICO_AQUI" method="POST">
+        <h3>Envíanos tus Consultas</h3>
         <div class="form-group">
-          <!-- El 'label' debe tener un 'for' que coincida con el 'id' del input -->
           <label for="name">Nombre</label>
           <input type="text" id="name" name="name" required />
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <!-- El 'name' del input de email TIENE que ser "email" o "_replyto" para que Formspree sepa a dónde responder -->
           <input type="email" id="email" name="email" required />
         </div>
         <div class="form-group">
-          <label for="message">Mensaje</label>
+          <label for="message">Describe brevemente tu proyecto o consulta</label>
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
         <button type="submit" class="button">Enviar Mensaje</button>
       </form>
-      <!-- ****** FIN DE LOS CAMBIOS ****** -->
-
     </div>
   </main>
 </Layout>
 
 <style>
+  /* ... Los estilos se mantienen igual que antes ... */
   .contact-wrapper {
     display: grid;
     gap: 3rem;
   }
-
   @media(min-width: 768px) {
     .contact-wrapper {
       grid-template-columns: 1fr 2fr;
       align-items: flex-start;
     }
   }
-
   .contact-info ul {
     list-style: none;
     padding: 0;
   }
-
   .contact-info li {
     margin-bottom: 1rem;
   }
-
   .form-group {
     margin-bottom: 1.5rem;
   }
-
   .form-group label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: bold;
   }
-
   .form-group input,
   .form-group textarea {
     width: 100%;
@@ -84,6 +72,6 @@ import Layout from '../layouts/Layout.astro';
     border: 1px solid var(--color-bordes);
     border-radius: 5px;
     font-size: 1rem;
-    box-sizing: border-box; /* Añadido para mejor consistencia */
+    box-sizing: border-box;
   }
 </style>

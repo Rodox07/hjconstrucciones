@@ -6,45 +6,75 @@ import ServiceCard from '../components/ServiceCard.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<Layout title="H&J Construcciones - Inicio">
+<Layout title="H&J Construcciones - Obras, Proyectos Sanitarios y SERVIU">
   <Hero />
 
   <main>
-    <section class="container">
-      <h2 class="section-title">Nuestros Servicios</h2>
+    <section class="container" id="about">
+      <h2 class="section-title">Por Qué Elegir a H&J Construcciones</h2>
       <div class="grid grid-3-cols">
-        <ServiceCard title="Construcción Residencial" icon="🏠">
-          Diseñamos y construimos la casa de tus sueños, con los más altos estándares de calidad.
+        <div class="feature-card">
+          <h3>Gestión Integral</h3>
+          <p>Nos hacemos cargo del proyecto de principio a fin, ejecutando y tramitando cada carpeta y etapa de forma responsable para tu tranquilidad.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Servicio Profesional</h3>
+          <p>Nos esmeramos por dar un servicio profesional, responsable y de la más alta calidad a nuestros clientes, guiándolos de manera efectiva.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Experiencia Especializada</h3>
+          <p>Contamos con amplia experiencia en obras civiles, proyectos de agua potable, alcantarillado particular (SEREMI) y proyectos SERVIU.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="services">
+      <h2 class="section-title">Nuestros Servicios Principales</h2>
+      <div class="grid grid-2-cols">
+        <ServiceCard title="Agua Potable y Alcantarillado" icon="💧">
+          Desarrollamos proyectos sanitarios para redes públicas y privadas, cumpliendo con toda la normativa vigente.
         </ServiceCard>
-        <ServiceCard title="Obras Comerciales" icon="🏢">
-          Desarrollamos locales comerciales, oficinas y edificios corporativos funcionales y modernos.
+        <ServiceCard title="Proyectos SERVIU" icon="🏘️">
+          Ejecutamos proyectos de construcción y mejoramiento de viviendas y barrios bajo los estándares del Servicio de Vivienda y Urbanización.
         </ServiceCard>
-        <ServiceCard title="Remodelaciones" icon="🔨">
-          Modernizamos y renovamos tus espacios para darles una nueva vida y mayor valor.
+        <ServiceCard title="Alcantarillados Particulares" icon="🏠">
+          Diseñamos, construimos y tramitamos la aprobación de sistemas de alcantarillado particulares ante la SEREMI de Salud.
+        </ServiceCard>
+        <ServiceCard title="Obras de Construcción General" icon="🏗️">
+          Realizamos todo tipo de obras civiles, desde edificaciones hasta movimientos de tierra, con un enfoque en la calidad y la seguridad.
         </ServiceCard>
       </div>
     </section>
 
-    <section class="container">
+    <section class="container" id="projects">
       <h2 class="section-title">Proyectos Destacados</h2>
       <div class="grid grid-3-cols">
-        <!-- Reemplaza las imágenes con las tuyas en la carpeta /public/images/ -->
         <ProjectCard 
-          title="Residencia Los Robles" 
-          category="Residencial" 
+          title="Sistema de Agua Potable Rural" 
+          category="Ingeniería Sanitaria" 
           imgSrc="/images/proyecto1.jpg"
         />
         <ProjectCard 
-          title="Edificio Corporativo Central" 
-          category="Comercial" 
+          title="Viviendas Sociales (SERVIU)" 
+          category="Proyectos Públicos" 
           imgSrc="/images/proyecto2.jpg"
         />
         <ProjectCard 
-          title="Remodelación Integral Cocina" 
-          category="Remodelación" 
+          title="Planta de Tratamiento Particular" 
+          category="Alcantarillado (SEREMI)" 
           imgSrc="/images/proyecto3.jpg"
         />
       </div>
     </section>
   </main>
 </Layout>
+
+<style>
+  .feature-card {
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .feature-card h3 {
+    color: var(--color-primario);
+  }
+</style>
