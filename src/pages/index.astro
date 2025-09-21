@@ -77,3 +77,40 @@ import CTA from '../components/CTA.astro';
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 </style>
+
+<style>
+  /* Mobile-First: apilado por defecto */
+  .alternating-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+  .layout-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+  }
+  .services-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  /* Desktop: dos columnas y rejilla de servicios */
+  @media(min-width: 768px) {
+    .alternating-layout {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+      margin-bottom: 4rem;
+    }
+    .alternating-layout.reverse .layout-image { 
+      order: 2; 
+    }
+    .services-grid {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+  }
+</style>
