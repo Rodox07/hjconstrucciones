@@ -1,43 +1,46 @@
 ---
-// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
+import HeroAdvanced from '../components/HeroAdvanced.astro';
 import ServiceCard from '../components/ServiceCard.astro';
-import ProjectCard from '../components/ProjectCard.astro';
+import CTA from '../components/CTA.astro';
 ---
-
 <Layout title="H&J Construcciones - Obras, Proyectos Sanitarios y SERVIU">
-  <Hero />
-
+  <HeroAdvanced />
   <main>
     <section class="container" id="about">
-      <h2 class="section-title">Por Qué Elegir a H&J Construcciones</h2>
-      <div class="grid grid-3-cols">
-        <div class="feature-card">
-          <h3>Gestión Integral</h3>
-          <p>Nos hacemos cargo del proyecto de principio a fin, ejecutando y tramitando cada carpeta y etapa de forma responsable para tu tranquilidad.</p>
+      <div class="section-title fade-in">
+        <h2>Profesionalismo, Responsabilidad y Calidad</h2>
+        <p>Son los tres pilares que definen cada proyecto que emprendemos.</p>
+      </div>
+      <div class="alternating-layout fade-in">
+        <div class="layout-image">
+          <img src="/images/why-us-1.jpg" alt="Equipo profesional de H&J Construcciones">
         </div>
-        <div class="feature-card">
-          <h3>Servicio Profesional</h3>
-          <p>Nos esmeramos por dar un servicio profesional, responsable y de la más alta calidad a nuestros clientes, guiándolos de manera efectiva.</p>
+        <div class="layout-text">
+          <h3>Gestión Integral de Principio a Fin</h3>
+          <p>Olvídate de las complicaciones. Nos hacemos cargo de la totalidad de tu proyecto, desde la planificación y tramitación de carpetas hasta la ejecución y entrega final, garantizando tranquilidad y resultados impecables.</p>
         </div>
-        <div class="feature-card">
-          <h3>Experiencia Especializada</h3>
-          <p>Contamos con amplia experiencia en obras civiles, proyectos de agua potable, alcantarillado particular (SEREMI) y proyectos SERVIU.</p>
+      </div>
+       <div class="alternating-layout reverse fade-in">
+        <div class="layout-image">
+          <img src="/images/why-us-2.jpg" alt="Planos de un proyecto de ingeniería sanitaria">
+        </div>
+        <div class="layout-text">
+          <h3>Experiencia en Proyectos Especializados</h3>
+          <p>Contamos con una sólida trayectoria en obras complejas, incluyendo proyectos de agua potable, alcantarillado particular con tramitación SEREMI y la ejecución de proyectos SERVIU, cumpliendo siempre con los más altos estándares.</p>
         </div>
       </div>
     </section>
-
-    <section class="container" id="services">
-      <h2 class="section-title">Nuestros Servicios Principales</h2>
-      <div class="grid grid-2-cols">
+    <section class="container" id="services" style="background-color: var(--color-bg-soft);">
+      <h2 class="section-title fade-in">Nuestras Áreas de Especialización</h2>
+      <div class="services-grid fade-in">
         <ServiceCard title="Agua Potable y Alcantarillado" icon="💧">
           Desarrollamos proyectos sanitarios para redes públicas y privadas, cumpliendo con toda la normativa vigente.
         </ServiceCard>
         <ServiceCard title="Proyectos SERVIU" icon="🏘️">
           Ejecutamos proyectos de construcción y mejoramiento de viviendas y barrios bajo los estándares del Servicio de Vivienda y Urbanización.
         </ServiceCard>
-        <ServiceCard title="Alcantarillados Particulares" icon="🏠">
+        <ServiceCard title="Alcantarillados Particulares (SEREMI)" icon="🏠">
           Diseñamos, construimos y tramitamos la aprobación de sistemas de alcantarillado particulares ante la SEREMI de Salud.
         </ServiceCard>
         <ServiceCard title="Obras de Construcción General" icon="🏗️">
@@ -45,36 +48,32 @@ import ProjectCard from '../components/ProjectCard.astro';
         </ServiceCard>
       </div>
     </section>
-
-    <section class="container" id="projects">
-      <h2 class="section-title">Proyectos Destacados</h2>
-      <div class="grid grid-3-cols">
-        <ProjectCard 
-          title="Sistema de Agua Potable Rural" 
-          category="Ingeniería Sanitaria" 
-          imgSrc="/images/proyecto1.jpg"
-        />
-        <ProjectCard 
-          title="Viviendas Sociales (SERVIU)" 
-          category="Proyectos Públicos" 
-          imgSrc="/images/proyecto2.jpg"
-        />
-        <ProjectCard 
-          title="Planta de Tratamiento Particular" 
-          category="Alcantarillado (SEREMI)" 
-          imgSrc="/images/proyecto3.jpg"
-        />
-      </div>
-    </section>
   </main>
+  <CTA />
 </Layout>
-
 <style>
-  .feature-card {
-    text-align: center;
-    padding: 1.5rem;
+  .alternating-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
   }
-  .feature-card h3 {
-    color: var(--color-primario);
+  @media(min-width: 768px) {
+    .alternating-layout {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+    }
+    .alternating-layout.reverse .layout-image { order: 2; }
+  }
+  .layout-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+  }
+  .services-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 </style>

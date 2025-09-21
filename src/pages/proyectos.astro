@@ -1,103 +1,29 @@
 ---
-// src/pages/proyectos.astro
 import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import CTA from '../components/CTA.astro';
 ---
 <Layout title="Nuestro Portafolio - H&J Construcciones">
   <main class="container">
-    <h1 class="section-title">Nuestro Portafolio de Proyectos</h1>
-    <div class="grid grid-3-cols">
-      <ProjectCard title="Sistema de Agua Potable Rural El Manzano" category="Ingeniería Sanitaria" imgSrc="/images/proyecto1.jpg" />
-      <ProjectCard title="Conjunto Habitacional Valles del Sur (SERVIU)" category="Proyectos Públicos" imgSrc="/images/proyecto2.jpg" />
-      <ProjectCard title="Planta de Tratamiento Particular para Condominio" category="Alcantarillado (SEREMI)" imgSrc="/images/proyecto3.jpg" />
-      <ProjectCard title="Edificación de Bodega Industrial" category="Obras Civiles" imgSrc="/images/proyecto4.jpg" />
-      <ProjectCard title="Mejoramiento de Sede Comunitaria (SERVIU)" category="Proyectos Públicos" imgSrc="/images/proyecto5.jpg" />
-      <ProjectCard title="Red de Alcantarillado Loteo San Isidro" category="Ingeniería Sanitaria" imgSrc="/images/proyecto6.jpg" />
+    <div class="section-title fade-in">
+        <h1>Nuestro Portafolio de Proyectos</h1>
+        <p>Cada proyecto es un testimonio de nuestro compromiso con la calidad y la excelencia.</p>
+    </div>
+    <div class="projects-grid fade-in">
+      <ProjectCard title="Sistema de Agua Potable Rural El Manzano" category="Ingeniería Sanitaria" imgSrc="/images/proyecto1.jpg" url="/proyectos/sistema-agua-potable"/>
+      <ProjectCard title="Conjunto Habitacional Valles del Sur (SERVIU)" category="Proyectos Públicos" imgSrc="/images/proyecto2.jpg" url="/proyectos/viviendas-serviu"/>
+      <ProjectCard title="Planta de Tratamiento Particular para Condominio" category="Alcantarillado (SEREMI)" imgSrc="/images/proyecto3.jpg" url="/proyectos/planta-tratamiento"/>
+      <ProjectCard title="Edificación de Bodega Industrial" category="Obras Civiles" imgSrc="/images/proyecto4.jpg" url="#"/>
+      <ProjectCard title="Mejoramiento de Sede Comunitaria (SERVIU)" category="Proyectos Públicos" imgSrc="/images/proyecto5.jpg" url="#"/>
+      <ProjectCard title="Red de Alcantarillado Loteo San Isidro" category="Ingeniería Sanitaria" imgSrc="/images/proyecto6.jpg" url="#"/>
     </div>
   </main>
-</Layout>```
-
----
-
-#### 📄 `src/pages/contacto.astro`
-
-La página de contacto se ha ajustado para reforzar el mensaje de que la empresa guiará al cliente de manera profesional.
-
-```astro
----
-// src/pages/contacto.astro
-import Layout from '../layouts/Layout.astro';
----
-<Layout title="Contacto - H&J Construcciones">
-  <main class="container">
-    <h1 class="section-title">Cotiza tu Proyecto con Nosotros</h1>
-    <div class="contact-wrapper">
-      <div class="contact-info">
-        <h3>Iniciemos tu Proyecto</h3>
-        <p>
-          Te invitamos a cotizar con nosotros. Analizaremos tus necesidades
-          y te guiaremos de manera efectiva y profesional en cada etapa.
-        </p>
-        <ul>
-          <li><strong>Email:</strong> contacto@hjconstrucciones.com</li>
-          <li><strong>Teléfono:</strong> +1 (234) 567-890</li>
-          <li><strong>Dirección:</strong> Av. Principal 123, Ciudad, País</li>
-        </ul>
-      </div>
-      <form class="contact-form" action="https://formspree.io/f/TU_ID_UNICO_AQUI" method="POST">
-        <h3>Envíanos tus Consultas</h3>
-        <div class="form-group">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" name="name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-group">
-          <label for="message">Describe brevemente tu proyecto o consulta</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="button">Enviar Mensaje</button>
-      </form>
-    </div>
-  </main>
+  <CTA />
 </Layout>
-
 <style>
-  /* ... Los estilos se mantienen igual que antes ... */
-  .contact-wrapper {
-    display: grid;
-    gap: 3rem;
-  }
-  @media(min-width: 768px) {
-    .contact-wrapper {
-      grid-template-columns: 1fr 2fr;
-      align-items: flex-start;
+    .projects-grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     }
-  }
-  .contact-info ul {
-    list-style: none;
-    padding: 0;
-  }
-  .contact-info li {
-    margin-bottom: 1rem;
-  }
-  .form-group {
-    margin-bottom: 1.5rem;
-  }
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: bold;
-  }
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid var(--color-bordes);
-    border-radius: 5px;
-    font-size: 1rem;
-    box-sizing: border-box;
-  }
 </style>
