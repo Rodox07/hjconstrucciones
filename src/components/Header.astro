@@ -2,7 +2,10 @@
 ---
 <header class="site-header">
   <div class="header-container">
-    <a href="/" class="logo">H&J Construcciones</a>
+    <!-- REEMPLAZO: Se cambia el enlace de texto por el logo de imagen -->
+    <a href="/" class="logo-link" aria-label="Página de inicio de H&J Construcciones">
+      <img src="/logo.png" alt="Logo de H&J Ingeniería y Construcción" class="logo-image">
+    </a>
     
     <!-- Botón Hamburguesa (solo visible en móvil) -->
     <button id="menu-button" class="menu-button" aria-label="Abrir menú">
@@ -16,7 +19,7 @@
     <nav id="main-nav" class="main-nav">
       <a href="/">Inicio</a>
       <a href="/servicios">Servicios</a>
-      <a href="/proyectos">Proyectos</a>
+      <!-- <a href="/proyectos">Proyectos</a> -->
       <a href="/contacto" class="button">Contacto</a>
     </nav>
   </div>
@@ -27,7 +30,6 @@
   const mainNav = document.getElementById('main-nav');
 
   menuButton.addEventListener('click', () => {
-    // Alterna la clase 'is-open' en la navegación para mostrar/ocultar
     mainNav.classList.toggle('is-open');
   });
 </script>
@@ -47,21 +49,26 @@
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
-    padding: 1rem; /* Padding reducido para móvil */
+    /* AJUSTE: Padding vertical reducido para acomodar mejor el logo */
+    padding: 0.5rem 1rem; 
     box-sizing: border-box;
   }
-  .logo {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.3rem; /* Ligeramente más pequeño en móvil */
-    color: var(--color-dark);
+
+  /* --- ESTILOS PARA LA IMAGEN DEL LOGO --- */
+  .logo-link {
     text-decoration: none;
     z-index: 10;
+  }
+  .logo-image {
+    /* AJUSTE: Altura base para el logo */
+    height: 60px; 
+    width: auto; /* El ancho se ajusta automáticamente */
+    display: block; /* Elimina espacio extra debajo de la imagen */
   }
 
   /* Estilos del Menú Hamburguesa */
   .menu-button {
-    display: block; /* Visible en móvil */
+    display: block; /* Visible en móvil por defecto */
     background: none;
     border: none;
     cursor: pointer;
@@ -100,7 +107,12 @@
   /* --- Estilos para Desktop (Tablet y más grandes) --- */
   @media (min-width: 768px) {
     .header-container {
-      padding: 1rem 2rem; /* Vuelve al padding original */
+      /* AJUSTE: Se mantiene el padding vertical y se aumenta el horizontal */
+      padding: 0.5rem 2rem; 
+    }
+    .logo-image {
+        /* AJUSTE OPCIONAL: Si quieres el logo un poco más grande en desktop */
+        height: 70px; 
     }
     .menu-button {
       display: none; /* Oculta el botón hamburguesa en desktop */
