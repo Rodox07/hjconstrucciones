@@ -3,10 +3,13 @@ import Layout from '../layouts/Layout.astro';
 import HeroAdvanced from '../components/HeroAdvanced.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import CTA from '../components/CTA.astro';
+import ProjectCarousel from '../components/ProjectCarousel.astro'; // <-- 1. IMPORTA EL CARRUSEL
+
 ---
 <Layout title="H&J Construcciones - Obras, Proyectos Sanitarios y SERVIU">
   <HeroAdvanced />
   <main>
+    <!-- === SECCIÓN QUIÉNES SOMOS === -->
     <section class="container" id="about">
       <div class="section-title fade-in">
         <h2>Profesionalismo, Responsabilidad y Calidad</h2>
@@ -31,6 +34,8 @@ import CTA from '../components/CTA.astro';
         </div>
       </div>
     </section>
+
+    <!-- === SECCIÓN SERVICIOS === -->
     <section class="container" id="services" style="background-color: var(--color-bg-soft);">
       <h2 class="section-title fade-in">Nuestras Áreas de Especialización</h2>
       <div class="services-grid fade-in">
@@ -48,38 +53,19 @@ import CTA from '../components/CTA.astro';
         </ServiceCard>
       </div>
     </section>
+
+    <!-- 2. AÑADE EL NUEVO CARRUSEL AQUÍ -->
+    <ProjectCarousel />
+    
   </main>
+  
   <CTA />
+
 </Layout>
-<style>
-  .alternating-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: center;
-    margin-bottom: 4rem;
-  }
-  @media(min-width: 768px) {
-    .alternating-layout {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 4rem;
-    }
-    .alternating-layout.reverse .layout-image { order: 2; }
-  }
-  .layout-image img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: var(--shadow-md);
-  }
-  .services-grid {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-</style>
 
 <style>
-  /* Mobile-First: apilado por defecto */
+  /* --- Estilos para las secciones 'Quienes Somos' y 'Servicios' --- */
+  /* (Estos estilos no cambian, se mantienen igual que antes) */
   .alternating-layout {
     display: grid;
     grid-template-columns: 1fr;
@@ -98,7 +84,6 @@ import CTA from '../components/CTA.astro';
     grid-template-columns: 1fr;
   }
 
-  /* Desktop: dos columnas y rejilla de servicios */
   @media(min-width: 768px) {
     .alternating-layout {
       grid-template-columns: repeat(2, 1fr);
